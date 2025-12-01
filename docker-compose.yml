@@ -50,6 +50,9 @@ services:
     environment:
       - GF_FEATURE_TOGGLES_ENABLE=flameGraph traceqlSearch traceQLStreaming correlations metricsSummary traceqlEditor traceToMetrics traceToProfiles
       - GF_AUTH_ANONYMOUS_ENABLED=false
+      # username: admin
+      # initPassword: admin
+      # updatedPassword: Qwerty@123
       - GF_AUTH_DISABLE_LOGIN_FORM=false
       - GF_PLUGINS_ENABLE_ALPHA=false
       - GF_ANALYTICS_REPORTING_ENABLED=false
