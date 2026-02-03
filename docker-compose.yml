@@ -38,6 +38,8 @@ services:
     image: grafana/grafana:12.2.1
     container_name: grafana
     restart: unless-stopped
+    ports:
+    - "3000:3000"
     volumes:
       - ./monitoring/provisioning:/etc/grafana/provisioning:ro
       - ./monitoring/dashboards:/var/lib/grafana/dashboards:ro
