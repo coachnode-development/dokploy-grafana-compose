@@ -29,6 +29,8 @@ services:
     image: grafana/loki:3.5.8
     container_name: loki
     restart: unless-stopped
+    ports:
+    - "3100:3100"
     volumes:
       - ./monitoring/loki.yaml:/etc/loki/loki.yaml:ro
     command:
