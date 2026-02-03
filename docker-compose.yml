@@ -15,8 +15,6 @@ services:
     depends_on:
       - tempo
       - loki
-    networks:
-      - dokploy-network
 
   tempo:
     image: grafana/tempo:2.9.0
@@ -26,8 +24,6 @@ services:
       - ./monitoring/tempo.yaml:/etc/tempo/tempo.yaml:ro
     command:
       - -config.file=/etc/tempo/tempo.yaml
-    networks:
-      - dokploy-network
 
   loki:
     image: grafana/loki:3.5.8
@@ -37,8 +33,6 @@ services:
       - ./monitoring/loki.yaml:/etc/loki/loki.yaml:ro
     command:
       - -config.file=/etc/loki/loki.yaml
-    networks:
-      - dokploy-network
 
   grafana:
     image: grafana/grafana:12.2.1
@@ -61,9 +55,4 @@ services:
     depends_on:
       - tempo
       - loki
-    networks:
-      - dokploy-network
 
-networks:
-  dokploy-network:
-    external: true
